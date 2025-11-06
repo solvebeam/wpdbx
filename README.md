@@ -32,3 +32,4 @@ try {
 - https://github.com/solvebeam/wpdbx
 - https://packagist.org/packages/solvebeam/wpdbx
 - https://spdx.org/licenses/GPL-3.0-or-later.html
+- https://www.solvebeam.com/
