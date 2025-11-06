@@ -10,6 +10,21 @@ composer require solvebeam/wpdbx
 
 ## Usage
 
+```php
+<?php
+
+use SolveBeam\WpdbX\Database;
+
+$wpdbx = Database::create();
+
+try {
+	$wpdbx->query( '…' );
+} catch ( Exception $e ) {
+	\wp_die( $e->getMessage() );
+}
+
+```
+
 ## Links
 
 - https://spdx.org/licenses/GPL-3.0-or-later.html
