@@ -15,11 +15,13 @@ composer require solvebeam/wpdbx
 
 use SolveBeam\WpdbX\WpdbAdapter;
 
-$wpdbx = WpdbAdapter::create();
+global $wpdb;
+
+$wpdbx = new WpdbAdapter( $wpdb );
 
 try {
 	$wpdbx->query( '…' );
-} catch ( Exception $e ) {
+} catch ( \Exception $e ) {
 	\wp_die( $e->getMessage() );
 }
 
