@@ -50,7 +50,7 @@ final class WpdbAdapter {
 	 *
 	 * @return self
 	 */
-	public static function create() {
+	public static function create(): self {
 		return self::from_global_wpdb();
 	}
 
