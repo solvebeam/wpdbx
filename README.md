@@ -13,9 +13,9 @@ composer require solvebeam/wpdbx
 ```php
 <?php
 
-use SolveBeam\WpdbX\Database;
+use SolveBeam\WpdbX\WpdbAdapter;
 
-$wpdbx = Database::create();
+$wpdbx = WpdbAdapter::create();
 
 try {
 	$wpdbx->query( '…' );

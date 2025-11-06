@@ -1,6 +1,6 @@
 <?php
 /**
- * Database
+ * WordPress database adapter
  *
  * @package SolveBeam\WpdbX
  * @author SolveBeam
@@ -15,9 +15,9 @@ namespace SolveBeam\WpdbX;
 use wpdb;
 
 /**
- * Database class
+ * WordPress database adapter class
  */
-final class Database {
+final class WpdbAdapter {
 	/**
 	 * WordPress database object.
 	 *
