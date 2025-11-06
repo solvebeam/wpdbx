@@ -147,7 +147,20 @@ final class WpdbAdapter {
 	public function get_var( $query = null, $x = 0, $y = 0 ) {
 		$result = $this->wpdb->get_var( $query, $x, $y );
 
-		if ( null === $result ) {
+		/**
+		 * The WordPress core documentation states:
+		 *
+		 * > Database query result (as string), or null on failure.
+		 *
+		 * However, `$wpdb->get_var()` also returns `null` when a query succeeds
+		 * but produces no results — not only on failure.
+		 *
+		 * Therefore, this method checks `$wpdb->last_error` to determine
+		 * whether an actual database error occurred.
+		 *
+		 * @link https://github.com/solvebeam/wpdbx/issues/1
+		 */
+		if ( null === $result && '' !== $this->wpdb->last_error ) {
 			throw new \Exception(
 				\sprintf(
 					'Error get var %s: %s.',
