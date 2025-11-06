@@ -25,6 +25,7 @@
 	},
 	"require-dev": {
 		"pronamic/wp-coding-standards": "^2.4",
+		"rector/rector": "^2.2",
 		"roots/wordpress-no-content": "^6.8"
 	}
 }

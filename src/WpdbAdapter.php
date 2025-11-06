@@ -19,19 +19,16 @@ use wpdb;
  */
 final class WpdbAdapter {
 	/**
-	 * WordPress database object.
-	 *
-	 * @var wpdb
-	 */
-	private wpdb $wpdb;
-
-	/**
 	 * Construct database wrapper.
 	 *
 	 * @param wpdb $wpdb WordPress database object.
 	 */
-	public function __construct( wpdb $wpdb ) {
-		$this->wpdb = $wpdb;
+	public function __construct(
+		/**
+		 * WordPress database object.
+		 */
+		private readonly wpdb $wpdb
+	) {
 	}
 
 	/**
