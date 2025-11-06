@@ -142,7 +142,7 @@ final class WpdbAdapter {
 	 * @param string|null $query Optional. SQL query. Defaults to null, use the result from the previous query.
 	 * @param int         $x     Optional. Column of value to return. Indexed from 0. Default 0.
 	 * @param int         $y     Optional. Row of value to return. Indexed from 0. Default 0.
-	 * @return string|null Database query result (as string), or null on failure.
+	 * @return string|null Database query result (as string), or null on ~~failure~~ no result.
 	 */
 	public function get_var( $query = null, $x = 0, $y = 0 ) {
 		$result = $this->wpdb->get_var( $query, $x, $y );
