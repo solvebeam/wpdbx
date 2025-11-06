@@ -1,0 +1,30 @@
+{
+	"name": "solvebeam/wpdbx",
+	"description": "An exception-based wrapper around WordPress $wpdb.",
+	"type": "library",
+	"license": "GPL-3.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"SolveBeam\\WpdbX\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "SolveBeam",
+			"email": "info@solvebeam.com"
+		}
+	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"sort-packages": true
+	},
+	"require": {
+		"php": ">=8.1"
+	},
+	"require-dev": {
+		"pronamic/wp-coding-standards": "^2.4",
+		"roots/wordpress-no-content": "^6.8"
+	}
+}
