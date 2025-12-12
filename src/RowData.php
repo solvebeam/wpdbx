@@ -40,7 +40,7 @@ final class RowData {
 	 */
 	public function set( string $name, $value, $format = '%s' ) {
 		$this->data[ $name ]   = $value;
-		$this->format[ $name ] = $value;
+		$this->format[ $name ] = $format;
 
 		return $this;
 	}
