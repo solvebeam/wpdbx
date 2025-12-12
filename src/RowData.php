@@ -31,14 +31,14 @@ final class RowData {
 	private array $format = [];
 
 	/**
-	 * Add.
+	 * Set.
 	 *
 	 * @param string $name   Name.
 	 * @param mixed  $value  Value.
 	 * @param string $format Format.
 	 * @return self
 	 */
-	public function add( string $name, $value, $format = '%s' ) {
+	public function set( string $name, $value, $format = '%s' ) {
 		$this->data[ $name ]   = $value;
 		$this->format[ $name ] = $value;
 
