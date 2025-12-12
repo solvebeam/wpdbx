@@ -56,12 +56,17 @@ final class WpdbAdapter {
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wpdb/insert/
 	 * @link https://github.com/WordPress/wordpress-develop/blob/6.7/src/wp-includes/class-wpdb.php#L2498-L2500
-	 * @param string     $table  Table name.
-	 * @param array      $data   Data.
-	 * @param array|null $format Format.
+	 * @param string        $table  Table name.
+	 * @param array|RowData $data   Data.
+	 * @param array|null    $format Format.
 	 * @return int|false The number of rows inserted, or false on error.
 	 */
 	public function insert( $table, $data, $format = null ) {
+		if ( $data instanceof RowData ) {
+			$format ??= $data->get_format();
+			$data     = $data->get_data();
+		}
+
 		$result = $this->wpdb->insert( $table, $data, $format );
 
 		if ( false === $result ) {
@@ -83,14 +88,19 @@ final class WpdbAdapter {
 	 *
 	 * @link https://developer.wordpress.org/reference/classes/wpdb/update/
 	 * @link https://github.com/WordPress/wordpress-develop/blob/6.7/src/wp-includes/class-wpdb.php#L2674-L2717
-	 * @param string     $table        Table name.
-	 * @param array      $data         Data.
-	 * @param array      $where        Where.
-	 * @param array|null $format       Format.
-	 * @param array|null $where_format Where format.
+	 * @param string        $table        Table name.
+	 * @param array|RowData $data         Data.
+	 * @param array         $where        Where.
+	 * @param array|null    $format       Format.
+	 * @param array|null    $where_format Where format.
 	 * @return int|false The number of rows updated, or false on error.
 	 */
 	public function update( $table, $data, $where, $format = null, $where_format = null ) {
+		if ( $data instanceof RowData ) {
+			$format ??= $data->get_format();
+			$data     = $data->get_data();
+		}
+
 		$result = $this->wpdb->update( $table, $data, $where, $format, $where_format );
 
 		if ( false === $result ) {
